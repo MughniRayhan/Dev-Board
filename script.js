@@ -8,6 +8,11 @@ const btn = document.querySelectorAll("#btn");
 const lastBtn = document.getElementById("lastBtn");
 const tasks = document.getElementById("tasks");
 
+document.getElementById("blogs").addEventListener("click",function(event){
+  event.preventDefault();
+    window.location.href="./blog.html";
+});
+
 
 // theme background color
 let color=['#F4F7FF','#F4F8D3','#FBF3B9','#B7B1F2','#B9B28A','#91AC8F']
