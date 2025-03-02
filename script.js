@@ -7,9 +7,7 @@ const assignedTask = document.getElementById("asigned");
 const btn = document.querySelectorAll("#btn");
 const lastBtn = document.getElementById("lastBtn");
 const tasks = document.getElementById("tasks");
-// const card = document.querySelectorAll(".card");
-// const title = document.querySelectorAll("#title")
-// theme color
+
 
 let color=['#F4F7FF','#F4F8D3','#FBF3B9','#B7B1F2','#B9B28A','#91AC8F']
  let count=0;
@@ -88,25 +86,7 @@ lastBtn.addEventListener("click", function(event){
 })
 
 
-// create
-// const createTask = (taskId,taskValue)=>{
-//   const element = document.createElement("li");
-//   element.id=taskId;
-//   element.innerHTML=taskValue;
-//   element.classList.add("list");
-//   lists.appendChild(element);
-  
-//   }
-
-  // //addTodo
-  // const addTask = (event)=>{
-  //   const taskValue = title.innerHTML;
-  //   console.log(taskValue)
-  //   //unique id
-  //   const taskId = Date.now().toString();
-
-  //   createTask(taskId,taskValue);
-    
-
-    
-// }
+// remove tasks
+document.getElementById("clearTasks").addEventListener("click",()=>{
+       tasks.innerHTML="";
+})
