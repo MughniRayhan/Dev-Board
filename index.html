@@ -19,6 +19,20 @@
       button:hover {
         background: skyblue;
       }
+      #btn:disabled {
+        background-color: #999;
+        cursor: not-allowed;
+      }
+      #lastBtn:disabled {
+        background-color: #999;
+        cursor: not-allowed;
+      }
+      .completed-item {
+        margin-top: 2rem;
+        font-size: 14px;
+        padding: 2px;
+        background: #f4f7ff;
+      }
     </style>
   </head>
   <body class="bg-[#F4F7FF] py-6 px-36 poppins-regular">
@@ -63,7 +77,7 @@
               </div>
               <div>
                 <p class="text-base">Task Assigned</p>
-                <h3 id="asigned" class="text-2xl font-bold">5</h3>
+                <h3 id="asigned" class="text-2xl font-bold">6</h3>
               </div>
             </div>
             <div
@@ -90,11 +104,13 @@
           </div>
           <!-- row-2 -->
           <div class="grid grid-cols-3 gap-6 mt-20">
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">ShopEase</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Fix Mobile Button Issue</h3>
+              <h3 id="title" class="title text-xl font-medium mt-4">
+                Fix Mobile Button Issue
+              </h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -109,6 +125,7 @@
                 </div>
                 <button
                   id="btn"
+                  type="submit"
                   class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
@@ -116,11 +133,11 @@
               </div>
             </div>
 
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">CloudSync</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Add Dark Mode</h3>
+              <h3 id="title" class="text-xl font-medium mt-4">Add Dark Mode</h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -134,18 +151,22 @@
                   </h3>
                 </div>
                 <button
-                  class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
+                  id="btn"
+                  type="submit"
+                  class="bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
                 </button>
               </div>
             </div>
 
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">SwiftPay</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Optimize Home page</h3>
+              <h3 id="title" class="text-xl font-medium mt-4">
+                Optimize Home page
+              </h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -159,6 +180,8 @@
                   </h3>
                 </div>
                 <button
+                  id="btn"
+                  type="submit"
                   class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
@@ -166,11 +189,13 @@
               </div>
             </div>
 
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">Meta</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Add new emoji 🤲</h3>
+              <h3 id="title" class="text-xl font-medium mt-4">
+                Add new emoji 🤲
+              </h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -184,6 +209,8 @@
                   </h3>
                 </div>
                 <button
+                  id="btn"
+                  type="submit"
                   class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
@@ -191,11 +218,13 @@
               </div>
             </div>
 
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">Google LLC</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Integrate OpenAI API</h3>
+              <h3 id="title" class="text-xl font-medium mt-4">
+                Integrate OpenAI API
+              </h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -209,6 +238,8 @@
                   </h3>
                 </div>
                 <button
+                  id="btn"
+                  type="submit"
                   class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
@@ -216,11 +247,13 @@
               </div>
             </div>
 
-            <div class="rounded-2xl bg-[#F4F7FF] p-4">
+            <div class="card rounded-2xl bg-[#F4F7FF] p-4">
               <div class="p-3 bg-white text-center w-[114px] rounded-2xl">
                 <p class="text-base text-[#00303C]">Glassdoar</p>
               </div>
-              <h3 class="text-xl font-medium mt-4">Improve Job searching</h3>
+              <h3 id="title" class="text-xl font-medium mt-4">
+                Improve Job searching
+              </h3>
               <div class="p-4 bg-white rounded-2xl mt-3">
                 <p class="text-sm text-gray-400">
                   Debug using Chrome DevTools, check for overlapping
@@ -234,6 +267,8 @@
                   </h3>
                 </div>
                 <button
+                  id="lastBtn"
+                  type="submit"
                   class="btn bg-[#3752FD] text-white text-base font-medium py-2.5 px-4 rounded-lg"
                 >
                   Completed
@@ -256,6 +291,7 @@
           >
             Clear History
           </button>
+          <div id="tasks" class="mt-3"></div>
         </div>
       </div>
     </main>

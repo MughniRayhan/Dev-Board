@@ -4,8 +4,11 @@ const weekday = document.getElementById("weekday");
 const time=document.getElementById("time");
 const completeTask = document.getElementById("complete");
 const assignedTask = document.getElementById("asigned");
-const btn = document.getElementById("btn");
-
+const btn = document.querySelectorAll("#btn");
+const lastBtn = document.getElementById("lastBtn");
+const tasks = document.getElementById("tasks");
+// const card = document.querySelectorAll(".card");
+// const title = document.querySelectorAll("#title")
 // theme color
 
 let color=['#F4F7FF','#F4F8D3','#FBF3B9','#B7B1F2','#B9B28A','#91AC8F']
@@ -35,14 +38,75 @@ weekday.innerHTML=currentDate.toLocaleDateString('en-US', { weekday: 'short' });
 time.innerHTML=formattedDate;
 
 // complete
-const taskNumber = parseInt(completeTask.innerHTML);
-const availableTask = parseInt(assignedTask.innerHTML);
-btn.addEventListener("click", function(event){
+
+let taskNumber = parseInt(completeTask.innerHTML);
+let availableTask = parseInt(assignedTask.innerHTML);
+
+btn.forEach(btn => {
+ 
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    alert("Board updated successfully!")
+    completeTask.innerHTML=taskNumber+1;
+    taskNumber=parseInt(completeTask.innerHTML);
+
+    assignedTask.innerHTML=availableTask-1;
+    availableTask= parseInt(assignedTask.innerHTML);
+    btn.disabled = true;
+
+    const card = this.parentElement.parentElement; 
+     const title = card.querySelector("#title").textContent;
+    const completedItem = document.createElement("p");
+        completedItem.textContent =`you have completed the task ${title}` ;
+        completedItem.classList.add("completed-item");
+      
+     tasks.appendChild(completedItem);
+  })
+});
+
+
+
+lastBtn.addEventListener("click", function(event){
   event.preventDefault();
+  alert("Board updated successfully!");
+  alert("Congrates!! You have completed all tasks");
   completeTask.innerHTML=taskNumber+1;
-  if(availableTask>10){
+  taskNumber=parseInt(completeTask.innerHTML);
+
   assignedTask.innerHTML=availableTask-1;
-  }else{
-    assignedTask.innerHTML="0" +  availableTask-1;
-  }
+  availableTask= parseInt(assignedTask.innerHTML);
+  btn.disabled = true;
+
+  const card = this.parentElement.parentElement; 
+  const title = card.querySelector("#title").textContent;
+ const completedItem = document.createElement("p");
+     completedItem.textContent =`you have completed the task ${title}` ;
+     completedItem.classList.add("completed-item");
+   
+  tasks.appendChild(completedItem);
+
 })
+
+
+// create
+// const createTask = (taskId,taskValue)=>{
+//   const element = document.createElement("li");
+//   element.id=taskId;
+//   element.innerHTML=taskValue;
+//   element.classList.add("list");
+//   lists.appendChild(element);
+  
+//   }
+
+  // //addTodo
+  // const addTask = (event)=>{
+  //   const taskValue = title.innerHTML;
+  //   console.log(taskValue)
+  //   //unique id
+  //   const taskId = Date.now().toString();
+
+  //   createTask(taskId,taskValue);
+    
+
+    
+// }
