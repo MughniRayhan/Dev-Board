@@ -9,6 +9,7 @@ const lastBtn = document.getElementById("lastBtn");
 const tasks = document.getElementById("tasks");
 
 
+// theme background color
 let color=['#F4F7FF','#F4F8D3','#FBF3B9','#B7B1F2','#B9B28A','#91AC8F']
  let count=0;
 theme.addEventListener("click", function(event){
@@ -35,8 +36,7 @@ const formattedDate = currentDate.toLocaleDateString('en-US', times).replace(','
 weekday.innerHTML=currentDate.toLocaleDateString('en-US', { weekday: 'short' });
 time.innerHTML=formattedDate;
 
-// complete
-
+// complete button
 let taskNumber = parseInt(completeTask.innerHTML);
 let availableTask = parseInt(assignedTask.innerHTML);
 
@@ -55,7 +55,9 @@ btn.forEach(btn => {
     const card = this.parentElement.parentElement; 
      const title = card.querySelector("#title").textContent;
     const completedItem = document.createElement("p");
-        completedItem.textContent =`you have completed the task ${title}` ;
+
+    let now = new Date();
+        completedItem.textContent =`you have completed the task ${title} at ${now.toLocaleTimeString()}` ;
         completedItem.classList.add("completed-item");
       
      tasks.appendChild(completedItem);
@@ -78,7 +80,9 @@ lastBtn.addEventListener("click", function(event){
   const card = this.parentElement.parentElement; 
   const title = card.querySelector("#title").textContent;
  const completedItem = document.createElement("p");
-     completedItem.textContent =`you have completed the task ${title}` ;
+
+ let now = new Date();
+     completedItem.textContent =`you have completed the task ${title} at ${now.toLocaleTimeString()}` ;
      completedItem.classList.add("completed-item");
    
   tasks.appendChild(completedItem);
