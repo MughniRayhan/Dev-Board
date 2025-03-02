@@ -5,7 +5,6 @@ const time=document.getElementById("time");
 const completeTask = document.getElementById("complete");
 const assignedTask = document.getElementById("asigned");
 const btn = document.querySelectorAll("#btn");
-const lastBtn = document.getElementById("lastBtn");
 const tasks = document.getElementById("tasks");
 
 document.getElementById("blogs").addEventListener("click",function(event){
@@ -44,12 +43,19 @@ time.innerHTML=formattedDate;
 // complete button
 let taskNumber = parseInt(completeTask.innerHTML);
 let availableTask = parseInt(assignedTask.innerHTML);
-
+let c=0;
 btn.forEach(btn => {
  
   btn.addEventListener("click", function(event){
     event.preventDefault();
-    alert("Board updated successfully!")
+     c++;
+     if(c<6){
+    alert("Board updated successfully!")}
+    else{
+      alert("Board updated successfully!");
+  alert("Congrates!! You have completed all tasks");
+    }
+
     completeTask.innerHTML=taskNumber+1;
     taskNumber=parseInt(completeTask.innerHTML);
 
@@ -68,31 +74,6 @@ btn.forEach(btn => {
      tasks.appendChild(completedItem);
   })
 });
-
-
-
-lastBtn.addEventListener("click", function(event){
-  event.preventDefault();
-  alert("Board updated successfully!");
-  alert("Congrates!! You have completed all tasks");
-  completeTask.innerHTML=taskNumber+1;
-  taskNumber=parseInt(completeTask.innerHTML);
-
-  assignedTask.innerHTML=availableTask-1;
-  availableTask= parseInt(assignedTask.innerHTML);
-  btn.disabled = true;
-
-  const card = this.parentElement.parentElement; 
-  const title = card.querySelector("#title").textContent;
- const completedItem = document.createElement("p");
-
- let now = new Date();
-     completedItem.textContent =`you have completed the task ${title} at ${now.toLocaleTimeString()}` ;
-     completedItem.classList.add("completed-item");
-   
-  tasks.appendChild(completedItem);
-
-})
 
 
 // remove tasks
